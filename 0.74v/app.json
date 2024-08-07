@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "nativejs-template",
-    "slug": "nativejs-template",
+    "name": "0.74v",
+    "slug": "0.74v",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     },
