@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 export default function App() {
     return (
         <View>
-            <StatusBar style="auto" />
+            <StatusBar style="auto" animated />
         </View>
     );
 }
