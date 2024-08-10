@@ -10,27 +10,89 @@ import Profile from "../screens/Tabs/Profile";
 
 export default function TabNavigation(props) {
     const Tab = createBottomTabNavigator();
+
+    const tabScreens = [
+        {
+            name: "Home",
+            key: "home",
+            component: Home,
+            iconName: "home",
+        },
+        {
+            name: "Task",
+            key: "list",
+            component: Task,
+            iconName: "list",
+        },
+        {
+            name: "Plus",
+            key: "add-circle",
+            component: Plus,
+            iconName: "add-circle",
+        },
+        {
+            name: "Inbox",
+            key: "notifications",
+            component: Inbox,
+            iconName: "notifications",
+        },
+        {
+            name: "Profile",
+            key: "person",
+            component: Profile,
+            iconName: "person",
+        },
+    ];
     return (
         <Tab.Navigator
-            screenOptions={{
-                tabBarLabelStyle: { fontSize: "28px", color: "#ef5589" },
+            screenOptions={({ route }) => {
+                const tabConfig = tabScreens?.find(
+                    (tab) => tab?.name === route?.name
+                );
+                return {
+                    headerShown: false,
+                    tabBarIcon: ({ focused, color, size }) => {
+                        return (
+                            <Ionicons
+                                name={`${tabConfig?.iconName}-${
+                                    focused ? "sharp" : "outline"
+                                }`}
+                                size={size}
+                                color={color}
+                            />
+                        );
+                    },
+                    tabBarInactiveTintColor: "#a2a5a8",
+                    tabBarActiveTintColor: "#ef5589",
+                    tabBarStyle: { paddingVertical: 2 },
+                    tabBarLabelStyle: { fontSize: 12 },
+                };
             }}
         >
-            <Tab.Screen
+            {tabScreens?.map((tab) => (
+                <Tab.Screen
+                    key={tab?.key}
+                    name={tab?.name}
+                    component={tab?.component}
+                />
+            ))}
+            {/* <Tab.Screen
                 name="Home"
+                key="home"
                 component={Home}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons
-                            name="home-outline"
+                            name={`home-${iconType}`}
                             color="#ef5589"
                             size={25}
                         />
                     ),
                 }}
-            />
-            <Tab.Screen
+            />  
+              <Tab.Screen
                 name="Task"
+                key="list"
                 component={Task}
                 options={{
                     tabBarIcon: ({ color, size }) => (
@@ -40,6 +102,7 @@ export default function TabNavigation(props) {
             />
             <Tab.Screen
                 name="Plus"
+                key="add-circle"
                 component={Plus}
                 options={{
                     tabBarIcon: ({ color, size }) => (
@@ -64,7 +127,8 @@ export default function TabNavigation(props) {
                         <Ionicons name="person-outline" />
                     ),
                 }}
-            />
+            /> 
+            */}
         </Tab.Navigator>
     );
 }

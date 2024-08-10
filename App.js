@@ -4,17 +4,23 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
 
 export default function App() {
-    return <Navigation />;
-}
-// <SafeAreaView>
-{
-    /* <View className="  bg-green-300">
+    return (
+        <>
+            <SafeAreaView className="h- ">
                 <StatusBar style="auto" />
-                <Text>Main App</Text>
-            </View>
-            <View> */
+            </SafeAreaView>
+            <Navigation />
+        </>
+    );
 }
+
 {
-    /* </View> */
+    /* 
+     <SafeAreaView>
+        <View className="  bg-green-300">
+            <StatusBar style="auto" />
+            <Text>Main App</Text>
+        </View>;
+     </SafeAreaView>
+ */
 }
-// </SafeAreaView>
