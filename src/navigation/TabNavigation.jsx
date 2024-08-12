@@ -1,12 +1,14 @@
 import React from "react";
 
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import Home from "../screens/Tabs/Home";
 import Task from "../screens/Tabs/Task";
 import Plus from "../screens/Tabs/Plus";
 import Inbox from "../screens/Tabs/Inbox";
 import Profile from "../screens/Tabs/Profile";
+import { withSafeArea } from "../../common/SafeAreaWrapper";
 
 export default function TabNavigation(props) {
     const Tab = createBottomTabNavigator();
@@ -73,10 +75,15 @@ export default function TabNavigation(props) {
                 <Tab.Screen
                     key={tab?.key}
                     name={tab?.name}
-                    component={tab?.component}
+                    component={withSafeArea(tab?.component)}
                 />
             ))}
-            {/* <Tab.Screen
+        </Tab.Navigator>
+    );
+}
+
+{
+    /* <Tab.Screen
                 name="Home"
                 key="home"
                 component={Home}
@@ -89,46 +96,5 @@ export default function TabNavigation(props) {
                         />
                     ),
                 }}
-            />  
-              <Tab.Screen
-                name="Task"
-                key="list"
-                component={Task}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="list-sharp" />
-                    ),
-                }}
-            />
-            <Tab.Screen
-                name="Plus"
-                key="add-circle"
-                component={Plus}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="add-circle-outline" />
-                    ),
-                }}
-            />
-            <Tab.Screen
-                name="Inbox"
-                component={Inbox}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="notifications-outline" />
-                    ),
-                }}
-            />
-            <Tab.Screen
-                name="Profile"
-                component={Profile}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="person-outline" />
-                    ),
-                }}
-            /> 
-            */}
-        </Tab.Navigator>
-    );
+            />  */
 }

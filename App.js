@@ -1,12 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
 
 export default function App() {
     return (
         <>
-            <SafeAreaView className="h- ">
+            <SafeAreaView>
+                {/* <Text>d</Text> */}
                 <StatusBar style="auto" />
             </SafeAreaView>
             <Navigation />
