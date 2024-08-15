@@ -34,7 +34,7 @@ export default function Navigation(props) {
                     <Stack.Screen
                         name="Auth"
                         component={withSafeArea(AuthNavigator)}
-                        initialParams={{ authHandler: authHandler }}
+                        // initialParams={{ authHandler: authHandler }}
                     />
                 )}
             </Stack.Navigator>

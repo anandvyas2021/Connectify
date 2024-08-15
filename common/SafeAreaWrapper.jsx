@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export const withSafeArea = (Component) => (props) => {
     return (
-        <SafeAreaView>
+        <SafeAreaView className="flex-1 h-full">
             <Component {...props} />
         </SafeAreaView>
     );

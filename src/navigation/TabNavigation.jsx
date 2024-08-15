@@ -38,11 +38,11 @@ export default function TabNavigation(props) {
             focusedIcon: "add-circle-outline",
         },
         {
-            name: "Inbox",
-            key: "notifications",
+            name: "Health",
+            key: "fitness",
             component: Inbox,
-            icon: "notifications-sharp",
-            focusedIcon: "notifications-outline",
+            icon: "fitness-sharp",
+            focusedIcon: "fitness-outline",
         },
         {
             name: "Profile",
@@ -64,7 +64,7 @@ export default function TabNavigation(props) {
                 return {
                     headerShown: false,
                     tabBarInactiveTintColor: "#a2a5a8",
-                    tabBarActiveTintColor: "#016ef0",
+                    tabBarActiveTintColor: "#7c63e7",
                     tabBarStyle: styles.tabBar,
                     tabBarItemStyle: styles.tabItem,
                     tabBarIcon: ({ focused, color, size }) => {
@@ -75,7 +75,7 @@ export default function TabNavigation(props) {
                                         ? tabConfig?.icon
                                         : tabConfig?.focusedIcon
                                 }
-                                size={isPlus ? 40 : focused ? 30 : size}
+                                size={isPlus ? 40 : focused ? 28 : size}
                                 color={color}
                             />
                         );
@@ -85,7 +85,7 @@ export default function TabNavigation(props) {
                     tabBarLabel: ({ focused, color }) => {
                         return isPlus ? null : (
                             <Text
-                                style={{ color, fontSize: 12, fontWeight: 700 }}
+                                style={{ color, fontSize: 10, fontWeight: 700 }}
                             >
                                 {route?.name}
                             </Text>
@@ -139,7 +139,10 @@ const styles = StyleSheet.create({
     },
     tabIcon1: { top: -0, zIndex: 100 },
     tabBadge: {
-        fontSize: 13,
+        fontSize: 12,
+        // color: "#fff",
+        // backgroundColor: "#cfc1db",
+        // padding: 3,
         fontWeight: 800,
     },
 });

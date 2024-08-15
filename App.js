@@ -8,7 +8,7 @@ export default function App() {
         <>
             <SafeAreaView>
                 {/* <Text>d</Text> */}
-                <StatusBar style="auto" />
+                <StatusBar backgroundColor="#3e3ad7" />
             </SafeAreaView>
             <Navigation />
         </>
