@@ -1,13 +1,21 @@
+import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
+import { Text, View } from "react-native";
 
 export default function App() {
+    const [loaded, error] = useFonts({
+        "primary-font": require("./assets/fonts/PTSans-Regular.ttf"),
+        "primary-font-bold": require("./assets/fonts/PTSans-Bold.ttf"),
+    });
+    if (!loaded) {
+        return <Text>Loading</Text>;
+    }
     return (
         <>
             <SafeAreaView>
-                {/* <Text>d</Text> */}
+                {/* <Text style={{ fontFamily: "primary-font" }}>d</Text> */}
                 <StatusBar backgroundColor="#3e3ad7" />
             </SafeAreaView>
             <Navigation />
