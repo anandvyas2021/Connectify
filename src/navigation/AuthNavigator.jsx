@@ -11,7 +11,6 @@ export default function AuthNavigator(props) {
     return (
         <KeyboardAvoidingView
             className="h-full"
-            // behavior="position"
             keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 0}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             // style={{ flex: 1 }}
