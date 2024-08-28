@@ -13,7 +13,6 @@ export default function AuthNavigator(props) {
             className="h-full"
             keyboardVerticalOffset={Platform.OS === "ios" ? 64 : 0}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
-            // style={{ flex: 1 }}
         >
             <LinearGradientBG>
                 <View className="h-full">
