@@ -17,7 +17,7 @@ export default function AuthNavigator(props) {
             <LinearGradientBG>
                 <View className="h-full">
                     <View className="items-center p-5 h-2/5">
-                        {/* <Text className="!text-white ">AuthNavigator</Text> */}
+                        {/* <Text className="!text-white ">AuthNavigator</Text>*/}
                         <Image
                             source={authBanner}
                             style={{ width: 200, height: 200 }}
