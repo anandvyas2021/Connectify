@@ -2,7 +2,7 @@ import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 
 export default function App() {
     const [loaded, error] = useFonts({
