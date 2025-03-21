@@ -15,7 +15,7 @@ export default function App() {
     return (
         <>
             <SafeAreaView>
-                {/* <Text style={{ fontFamily: "primary-font"}}>Text</Text>  */}
+                {/* <Text style={{ fontFamily: "primary-font"}}>Text</Text> */}
                 <StatusBar backgroundColor="#3e3ad7" />
             </SafeAreaView>
             <Navigation />
